@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Enums;
+package modelo;
 
 /**
  *
  * @author Favia Elizalde
  */
-public enum Alineacion {
-    ESQUINA,
-    FILA,
-    COLUMNA
+public class Mazo {
     
 }
