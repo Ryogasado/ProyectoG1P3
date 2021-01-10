@@ -10,5 +10,10 @@ package modelo;
  * @author Favia Elizalde
  */
 public class CartaJuego {
+    private Carta carta;
+    private boolean marcada;
+    
+    public CartaJuego(){
+    }
     
 }

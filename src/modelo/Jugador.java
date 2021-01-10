@@ -10,5 +10,9 @@ package modelo;
  * @author Favia Elizalde
  */
 public class Jugador {
+    private String nombre;
+    private Tablero tablero;
     
+    public Jugador(){
+    }
 }
