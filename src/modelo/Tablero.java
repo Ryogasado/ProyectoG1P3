@@ -14,6 +14,7 @@ public class Tablero {
     private ArrayList<CartaJuego> cartas;
     
     public Tablero(){
+        cartas= new ArrayList<CartaJuego>();
     }
     
     
