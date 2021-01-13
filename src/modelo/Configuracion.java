@@ -18,14 +18,15 @@ public class Configuracion {
     Scanner sc= new Scanner(System.in);
     
     public Configuracion(){
+        /*
         System.out.println("Elegir el numero de oponentes: ");
         System.out.println("1 o 2");
         int numero=sc.nextInt();
         sc.nextLine();
-        this.numOponentes=numero;
+        this.numOponentes=numero;*/
     }
     
-    public void method(String archivo){
+    public void methodConfig(String archivo){
         try{
             File file= new File(archivo);            
             FileWriter escribir= new FileWriter(file);
