@@ -29,6 +29,11 @@ public class ProyFXMain extends Application{
         Scene scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        
+        Parent rootC= FXMLLoader.load(getClass().getResource("ConfiguracionFXML.fxml"));
+        Scene sceneC= new Scene(rootC);
+        stage.setScene(sceneC);
+        stage.show();
     }
 
     /**
