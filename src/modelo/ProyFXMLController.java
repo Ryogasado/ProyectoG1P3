@@ -46,12 +46,23 @@ public abstract class ProyFXMLController {
     private Button Config;
     
     
-    public void handleBtnC(ActionEvent event) throws Exception{
+    public void accionConfig() throws Exception{
         Parent root1= FXMLLoader.load(getClass().getResource("ConfiguracionFXML.fxml"));
         Scene ventanaC= new Scene(root1);
-        Stage window= (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window= (Stage) Config.getScene().getWindow();
         window.setScene(ventanaC);
-        window.show();
+    }
+    public void accionnJuego() throws Exception{
+        Parent root2= FXMLLoader.load(getClass().getResource("JuegoFXML.fxml"));
+        Scene ventanaJ= new Scene(root2);
+        Stage window= (Stage) nJuego.getScene().getWindow();
+        window.setScene(ventanaJ);
+    }
+    public void accionReporte() throws Exception{
+        Parent root3= FXMLLoader.load(getClass().getResource("ReporteFXML.fxml"));
+        Scene ventanaR= new Scene(root3);
+        Stage window= (Stage) nJuego.getScene().getWindow();
+        window.setScene(ventanaR);
     }
 }
         
