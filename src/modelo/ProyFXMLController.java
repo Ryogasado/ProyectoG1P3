@@ -29,7 +29,7 @@ import javafx.stage.Window;
  *
  * @author Favia Elizalde
  */
-public abstract class ProyFXMLController {
+public class ProyFXMLController implements Initializable  {
     //implements Initializable 
      
     @FXML
@@ -44,7 +44,6 @@ public abstract class ProyFXMLController {
     private Button Reporte;
     @FXML
     private Button Config;
-    
     
     public void accionConfig() throws Exception{
         Parent root1= FXMLLoader.load(getClass().getResource("ConfiguracionFXML.fxml"));
@@ -64,18 +63,20 @@ public abstract class ProyFXMLController {
         Stage window= (Stage) nJuego.getScene().getWindow();
         window.setScene(ventanaR);
     }
-}
-        
-        
-        
- 
-
+    
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
-    //@Override
-    //public void initialize(URL url, ResourceBundle rb) {
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    //}  
+        
+    }  
+}
+   
+     
+    
     
 
