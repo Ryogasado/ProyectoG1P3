@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -37,22 +38,31 @@ public class ConfiguracionFXMLController implements Initializable{
     @FXML
     private Label escogerOp;
     
- 
-    @FXML private void clickOponentes(){
+    @FXML
+    void accionAceptar(ActionEvent event) throws Exception {
+
+    }
+
+    @FXML
+    void clickOponentes(MouseEvent event) throws Exception {
         list2.removeAll(list2);
         String uno= "1";
         String dos= "2";
         list2.addAll(uno,dos);
-        oponentes.getItems().addAll(list2);     
-        
+        oponentes.getItems().addAll(list2);
     }
-    @FXML private void clickVisibilidad(){
+
+    @FXML
+    void clickVisibilidad(MouseEvent event) throws Exception{
         list.removeAll(list);
         String si= "Si";
         String no= "No";
         list.addAll(si,no);
-        visibilidad.getItems().addAll(list);        
+        visibilidad.getItems().addAll(list); 
     }
+   
+
+  
 
     /**
      * Initializes the controller class.
