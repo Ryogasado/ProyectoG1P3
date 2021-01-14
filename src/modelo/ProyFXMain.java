@@ -24,16 +24,12 @@ import javafx.stage.Stage;
 public class ProyFXMain extends Application{
     
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage primaryStage) throws Exception{
         Parent root= FXMLLoader.load(getClass().getResource("ProyFXML.fxml"));
         Scene scene= new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        primaryStage.setScene(scene);
+        primaryStage.show();
         
-        Parent rootC= FXMLLoader.load(getClass().getResource("ConfiguracionFXML.fxml"));
-        Scene sceneC= new Scene(rootC);
-        stage.setScene(sceneC);
-        stage.show();
     }
 
     /**
@@ -44,62 +40,3 @@ public class ProyFXMain extends Application{
     }
     
 }
-
-/*public class ProyFXMain extends Application {
-    
-    @Override
-    public void start(Stage primaryStage) {
-        
-        
-        
-        //Botones
-        Button nJuego = new Button();
-        Button Config = new Button();
-        Button Reporte = new Button();
-        
-        //        
-        nJuego.setText("Nuevo Juego");
-        nJuego.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Nuevo Juego");
-            }
-        });
-        
-        Reporte.setText("Reporte");
-        Reporte.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Reporte");
-            }
-        });
-        
-        Config.setText("Configuraciones");
-        Config.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Configuraciones");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(nJuego);
-        root.getChildren().add(Config);
-        root.getChildren().add(Reporte);
-        
-        Scene scene = new Scene(root, 600, 550);
-        
-        primaryStage.setTitle("LOTERIA MEXICANA");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-        /*
-    public static void main(String[] args) {
-        launch(args);
-    }
-    
-}*/

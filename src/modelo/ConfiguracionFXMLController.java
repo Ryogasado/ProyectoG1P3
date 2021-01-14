@@ -22,7 +22,7 @@ import javafx.scene.image.ImageView;
  *
  * @author Favia Elizalde
  */
-public class ConfiguracionFXMLController implements Initializable {
+public class ConfiguracionFXMLController {
     ObservableList list= FXCollections.observableArrayList();
     ObservableList list2= FXCollections.observableArrayList();
     
@@ -57,12 +57,13 @@ public class ConfiguracionFXMLController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    /*
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         clickVisibilidad();
         clickOponentes();
-    } 
+    } */
     
     /*private void visCartas(){
         list.removeAll(list);

@@ -16,7 +16,7 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="Config" layoutX="31.0" layoutY="115.0" mnemonicParsing="false" onAction="#accionConfig" text="Configuración">
+            <Button fx:id="Config" layoutX="31.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleBtnC" text="Configuración">
                <font>
                   <Font size="16.0" />
                </font>
