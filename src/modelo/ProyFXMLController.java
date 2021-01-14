@@ -60,7 +60,7 @@ public class ProyFXMLController implements Initializable  {
     public void accionReporte() throws Exception{
         Parent root3= FXMLLoader.load(getClass().getResource("ReporteFXML.fxml"));
         Scene ventanaR= new Scene(root3);
-        Stage window= (Stage) nJuego.getScene().getWindow();
+        Stage window= (Stage) Reporte.getScene().getWindow();
         window.setScene(ventanaR);
     }
     

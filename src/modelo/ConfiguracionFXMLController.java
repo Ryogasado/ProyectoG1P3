@@ -27,9 +27,9 @@ public class ConfiguracionFXMLController implements Initializable{
     ObservableList list2= FXCollections.observableArrayList();
     
     @FXML
-    private ChoiceBox oponentes;
+    private ChoiceBox<?> oponentes;
     @FXML
-    private ChoiceBox visibilidad; 
+    private ChoiceBox<?> visibilidad; 
     @FXML
     private Button btnAceptar;
     @FXML
@@ -43,7 +43,7 @@ public class ConfiguracionFXMLController implements Initializable{
         String uno= "1";
         String dos= "2";
         list2.addAll(uno,dos);
-        visibilidad.getItems().addAll(list2);     
+        oponentes.getItems().addAll(list2);     
         
     }
     @FXML private void clickVisibilidad(){
@@ -63,8 +63,7 @@ public class ConfiguracionFXMLController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        clickVisibilidad();
-        clickOponentes();
+      
     }
     
 }
