@@ -13,17 +13,18 @@ import java.util.*;
  */
 public class Configuracion {
     private boolean visible;
-    private int numOponentes;
+    private String numOponentes;
     
     Scanner sc= new Scanner(System.in);
     
-    public Configuracion(){
-        /*
-        System.out.println("Elegir el numero de oponentes: ");
-        System.out.println("1 o 2");
-        int numero=sc.nextInt();
-        sc.nextLine();
-        this.numOponentes=numero;*/
+    public Configuracion(String s, String oponent){
+        this.numOponentes= oponent;
+        if(s.equals("Si")){
+            visible= true;
+        }else{
+            visible=false;
+        }
+        
     }
     
     public void methodConfig(String archivo){

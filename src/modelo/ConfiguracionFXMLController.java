@@ -7,16 +7,21 @@ package modelo;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -24,19 +29,19 @@ import javafx.scene.input.MouseEvent;
  * @author Favia Elizalde
  */
 public class ConfiguracionFXMLController implements Initializable{
-    ObservableList list= FXCollections.observableArrayList();
-    ObservableList list2= FXCollections.observableArrayList();
     
     @FXML
-    private ChoiceBox<?> oponentes;
+    private ChoiceBox<String> oponentes;
     @FXML
-    private ChoiceBox<?> visibilidad; 
+    private ChoiceBox<String> visibilidad; 
     @FXML
     private Button btnAceptar;
     @FXML
     private Label visibCartas;
     @FXML
     private Label escogerOp;
+    
+    
     
     @FXML
     void accionAceptar(ActionEvent event) throws Exception {
@@ -45,24 +50,15 @@ public class ConfiguracionFXMLController implements Initializable{
 
     @FXML
     void clickOponentes(MouseEvent event) throws Exception {
-        list2.removeAll(list2);
-        String uno= "1";
-        String dos= "2";
-        list2.addAll(uno,dos);
-        oponentes.getItems().addAll(list2);
+        String numO= oponentes.getSelectionModel().getSelectedItem().toString();
+        
     }
 
     @FXML
     void clickVisibilidad(MouseEvent event) throws Exception{
-        list.removeAll(list);
-        String si= "Si";
-        String no= "No";
-        list.addAll(si,no);
-        visibilidad.getItems().addAll(list); 
+        String vis= visibilidad.getSelectionModel().getSelectedItem().toString();    
     }
-   
 
-  
 
     /**
      * Initializes the controller class.
@@ -72,8 +68,11 @@ public class ConfiguracionFXMLController implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-      
+        ObservableList<String> listO= FXCollections.observableArrayList("1","2");
+        oponentes.setItems(listO);
+        ObservableList<String> listV= FXCollections.observableArrayList("Si","No");
+        visibilidad.setItems(listV);
+ 
     }
     
 }
