@@ -13,8 +13,20 @@ import java.util.*;
 public class Mazo {
     private ArrayList<Carta> cartas;
     
-    public Mazo(){
-        cartas=new ArrayList<Carta> ();
+    
+    public void llenarMazo(){
+        ArrayList<Integer> listaNumCartas = new ArrayList<>();
+        for(int i=1 ;i<=54;i++){
+            listaNumCartas.add(i);
+        }
+        Collections.shuffle(listaNumCartas);
+        for(int i: listaNumCartas){
+            Carta nueva= new Carta(i);
+            cartas.add(nueva);
+        }
+    }
+    public void barajar(){
+        
     }
     
 }

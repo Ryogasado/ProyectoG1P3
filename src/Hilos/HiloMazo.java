@@ -5,10 +5,12 @@
  */
 package Hilos;
 
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Collections;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javax.swing.text.html.ImageView;
 import modelo.Carta;
 
 /**
@@ -38,7 +40,7 @@ public class HiloMazo extends Thread{
         Collections.shuffle(listaCartasNumeros);
         //Arreglar lo de agregar con el constructor de la carta
         for(int i: listaCartasNumeros){
-            Carta nueva= new Carta(i,nombre,ruta);
+            Carta nueva= new Carta(i);
             mazo.add(nueva);
             
         }

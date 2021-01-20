@@ -11,8 +11,11 @@
    <children>
       <TableView layoutX="72.0" layoutY="101.0" prefHeight="249.0" prefWidth="457.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Juego" />
-          <TableColumn prefWidth="75.0" text="Informacion" />
+          <TableColumn prefWidth="84.0" text="Fecha" />
+          <TableColumn prefWidth="66.0" text="Duracion" />
+            <TableColumn prefWidth="90.0" text="Usuario" />
+            <TableColumn prefWidth="139.0" text="Cantidad de Oponentes" />
+            <TableColumn prefWidth="77.0" text="Alineacion" />
         </columns>
       </TableView>
       <Label layoutX="224.0" layoutY="41.0" text="Reporte">
