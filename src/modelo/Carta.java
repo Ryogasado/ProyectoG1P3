@@ -5,10 +5,11 @@
  */
 package modelo;
 
-import java.awt.Image;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import javafx.scene.image.Image;
 
 /**
  *

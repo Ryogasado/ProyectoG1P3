@@ -11,11 +11,12 @@ package modelo;
  */
 
 
-import java.awt.Image;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.image.Image;
 
 
 public class Imagen {

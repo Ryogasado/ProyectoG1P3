@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /**
@@ -22,13 +23,21 @@ public class JuegoFXMLController implements Initializable {
     private Button regresar;
     
     @FXML
+    private Button Loteria;
+
+    
+    @FXML
+    private GridPane TableroJugador;
+    
+    @FXML
     void accionRegresar() throws Exception{
         Parent root1= FXMLLoader.load(getClass().getResource("ProyFXML.fxml"));
         Scene ventanaC= new Scene(root1);
         Stage window= (Stage) regresar.getScene().getWindow();
         window.setScene(ventanaC);
     }
-
+    
+    
     /**
      * Initializes the controller class.
      * @param url
@@ -37,6 +46,7 @@ public class JuegoFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }    
     
 }

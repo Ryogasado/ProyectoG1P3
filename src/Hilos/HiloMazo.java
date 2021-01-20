@@ -5,12 +5,10 @@
  */
 package Hilos;
 
-import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Collections;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javax.swing.text.html.ImageView;
 import modelo.Carta;
 
 /**
@@ -50,7 +48,7 @@ public class HiloMazo extends Thread{
     @Override
     public void run(){
         for(Carta c: mazo){
-            imag= c.getImagen();
+            imag = c.getImagen();
             numero= c.getNumero();
             imagenSc.setImage(imag);
             dormir();
