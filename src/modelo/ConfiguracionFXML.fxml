@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="modelo.ConfiguracionFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modelo.ConfiguracionFXMLController">
    <children>
       <AnchorPane layoutX="101.0" layoutY="36.0" prefHeight="126.0" prefWidth="399.0">
          <children>
@@ -30,5 +29,6 @@
          </children>
       </AnchorPane>
       <Button fx:id="btnAceptar" layoutX="275.0" layoutY="327.0" mnemonicParsing="false" onAction="#accionAceptar" text="Aceptar" />
+      <Button fx:id="regresar" layoutX="562.0" layoutY="14.0" mnemonicParsing="false" onAction="#accionRegresar" text="X" />
    </children>
 </AnchorPane>

@@ -40,7 +40,16 @@ public class ConfiguracionFXMLController implements Initializable{
     private Label visibCartas;
     @FXML
     private Label escogerOp;
+    @FXML
+    private Button regresar;
     
+    @FXML
+    void accionRegresar() throws Exception{
+        Parent root1= FXMLLoader.load(getClass().getResource("ProyFXML.fxml"));
+        Scene ventanaC= new Scene(root1);
+        Stage window= (Stage) regresar.getScene().getWindow();
+        window.setScene(ventanaC);
+    }
     
     
     @FXML
