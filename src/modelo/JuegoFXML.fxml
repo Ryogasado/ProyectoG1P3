@@ -16,10 +16,6 @@
             <Button fx:id="Loteria" layoutX="74.0" layoutY="44.0" mnemonicParsing="false" onAction="#accionLoteria" text="Loteria" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="528.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <ImageView fx:id="mazoImagen" fitHeight="180.0" fitWidth="200.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
-         </children></AnchorPane>
       <Label layoutX="613.0" layoutY="216.0" prefHeight="17.0" prefWidth="43.0" text="Mazo">
          <font>
             <Font name="Comic Sans MS" size="15.0" />
@@ -67,5 +63,6 @@
          </children>
       </AnchorPane>
       <Button fx:id="regresar" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#accionRegresar" text="X" />
+      <ImageView fx:id="mazoImagen" fitHeight="150.0" fitWidth="200.0" layoutX="542.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
