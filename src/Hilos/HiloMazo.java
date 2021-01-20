@@ -36,7 +36,6 @@ public class HiloMazo extends Thread{
             listaCartasNumeros.add(i);
         }
         Collections.shuffle(listaCartasNumeros);
-        //Arreglar lo de agregar con el constructor de la carta
         for(int i: listaCartasNumeros){
             Carta nueva= new Carta(i);
             mazo.add(nueva);
