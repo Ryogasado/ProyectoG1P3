@@ -61,7 +61,7 @@ public class JuegoFXMLController implements Initializable {
         // Inicializa el tablero
         tablero1.llenarCartasAzar(TableroJugador); 
         hilo= new HiloMazo(mazoImagen);
-        hilo.llenarMazo();
+        
     }    
     
 }
