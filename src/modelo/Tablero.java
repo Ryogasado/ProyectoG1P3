@@ -26,17 +26,19 @@ public class Tablero {
     }
     
     public void llenarCartasAzar(GridPane grid){
-        int n = 0;
-        Image img1 = null;
-        Collections.shuffle(listaNumCartas);
         try{
-            img1 = new Image(new FileInputStream("src/imagenes/"+listaNumCartas.get(n)+".png"));
+            int n = 0;
+            Image img1 = null;
+            Collections.shuffle(listaNumCartas);
+            
             for(int i=0;i<4;i++){
                 for(int j=0;j<4;j++){
+                    img1 = new Image(new FileInputStream("src/imagenes/"+listaNumCartas.get(n)+".png"),60,60,true,true);
                     ImageView img = new ImageView(img1);
                     grid.add(img,i,j);
                     n++;
                 }
+                
             }
         }catch(FileNotFoundException ex){
             System.out.println("No se encontro la imagen");

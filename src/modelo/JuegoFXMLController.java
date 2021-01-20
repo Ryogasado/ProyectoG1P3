@@ -20,6 +20,7 @@ import javafx.stage.Stage;
  * 
  */
 public class JuegoFXMLController implements Initializable {
+    Tablero tablero1 = new Tablero();
     @FXML
     private Button regresar;
     
@@ -51,7 +52,7 @@ public class JuegoFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+        tablero1.llenarCartasAzar(TableroJugador);
     }    
     
 }

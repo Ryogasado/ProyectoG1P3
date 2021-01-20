@@ -19,14 +19,12 @@ public class Mazo {
         for(int i=1 ;i<=54;i++){
             listaNumCartas.add(i);
         }
+        //Se usa shuffle para bajar el mazo
         Collections.shuffle(listaNumCartas);
         for(int i: listaNumCartas){
             Carta nueva= new Carta(i);
             cartas.add(nueva);
         }
-    }
-    public void barajar(){
-        
     }
     
 }
