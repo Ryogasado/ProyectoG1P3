@@ -5,8 +5,12 @@
  */
 package Hilos;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import modelo.Carta;
@@ -46,11 +50,16 @@ public class HiloMazo extends Thread{
     //Run del hilo
     @Override
     public void run(){
+        
         for(Carta c: mazo){
-            imag = c.getImagen();
-            numero= c.getNumero();
-            imagenSc.setImage(imag);
-            dormir();
+            try {
+                numero= c.getNumero();
+                imag= new Image(new FileInputStream("src/imagenes/"+numero+".png"),90,90,true,true);
+                imagenSc.setImage(imag);
+                dormir();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(HiloMazo.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
