@@ -3,6 +3,7 @@ package modelo;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -37,6 +38,10 @@ public class JuegoFXMLController implements Initializable {
         window.setScene(ventanaC);
     }
     
+    @FXML
+    void accionLoteria(ActionEvent event) throws Exception {
+        
+    }
     
     /**
      * Initializes the controller class.
