@@ -1,6 +1,7 @@
 
 package modelo;
 
+import Enums.Alineacion;
 import Hilos.HiloMazo;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,6 +25,7 @@ import javafx.stage.Stage;
 public class JuegoFXMLController implements Initializable {
     Tablero tablero1 = new Tablero();
     HiloMazo hilo;
+    Alineacion alineacionGame= null;
     @FXML
     private Button regresar;
     
@@ -60,8 +62,12 @@ public class JuegoFXMLController implements Initializable {
         // TODO
         // Inicializa el tablero
         tablero1.llenarCartasAzar(TableroJugador); 
+        //Inicializa el hilo del mazo
         hilo= new HiloMazo(mazoImagen);
         hilo.start();
+        //Escoge la alineacion
+        alineacionGame= Alineacion.getRandomTipo();
+        
     }    
     
 }
