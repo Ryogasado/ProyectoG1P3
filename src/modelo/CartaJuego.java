@@ -13,7 +13,15 @@ public class CartaJuego {
     private Carta carta;
     private boolean marcada;
     
-    public CartaJuego(){
+    public CartaJuego(Carta carta, boolean marcada){
+        this.carta= carta;
+        this.marcada=marcada;
     }
     
+    public Carta getCarta(){
+        return carta;
+    }
+       
+    
+
 }

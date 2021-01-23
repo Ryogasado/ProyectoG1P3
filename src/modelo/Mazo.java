@@ -5,6 +5,7 @@
  */
 package modelo;
 import java.util.*;
+import javafx.scene.control.Label;
 
 /**
  *
@@ -12,7 +13,6 @@ import java.util.*;
  */
 public class Mazo {
     private ArrayList<Carta> cartas;
-    
     
     public void llenarMazo(){
         ArrayList<Integer> listaNumCartas = new ArrayList<>();
@@ -23,8 +23,9 @@ public class Mazo {
         Collections.shuffle(listaNumCartas);
         for(int i: listaNumCartas){
             Carta nueva= new Carta(i);
-            cartas.add(nueva);
-        }
+            cartas.add(nueva);  
+        } 
     }
+    
     
 }

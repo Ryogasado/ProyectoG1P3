@@ -72,5 +72,8 @@ public class Carta {
     }
     
     
+    public void Frejol(){
+    }
+    
     
 }

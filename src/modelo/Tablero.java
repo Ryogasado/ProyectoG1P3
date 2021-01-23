@@ -5,6 +5,7 @@ import java.util.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import Hilos.*;
 
 /**
  *
@@ -36,15 +37,22 @@ public class Tablero {
                     img1 = new Image(new FileInputStream("src/imagenes/"+listaNumCartas.get(n)+".png"),60,60,true,true);
                     ImageView img = new ImageView(img1);
                     grid.add(img,i,j);
+                    int numeroCarta= listaNumCartas.get(n);
+                    Carta cartaNueva= new Carta(numeroCarta);
+                    CartaJuego cN= new CartaJuego(cartaNueva,false);
+                    cartas.add(cN);                    
                     n++;
                 }
-                
             }
         }catch(FileNotFoundException ex){
             System.out.println("No se encontro la imagen");
         }
     }
     
+    public ArrayList<CartaJuego> getCartasJuego(){
+        return cartas;
+    }
+      
     
     
     
