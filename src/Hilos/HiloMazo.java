@@ -27,7 +27,6 @@ public class HiloMazo extends Thread{
     private int numero;
     public ImageView imagenSc;
     public Image imag;
-    public Label label;
     public Image imagF;
     
     public int getNumero(){
@@ -69,10 +68,7 @@ public class HiloMazo extends Thread{
                 imag= new Image(new FileInputStream("src/imagenes/"+numero+".png"),90,90,true,true);
                 imagenSc.setImage(imag);
                 dormir();
-                
-                //Frejol
-                imagF=new Image(new FileInputStream("src/imagenes/frejol1.jpg"),90,90,true,true);
-                
+                             
                 cementerio.add(c);                
                 
             } catch (FileNotFoundException ex) {
@@ -93,8 +89,7 @@ public class HiloMazo extends Thread{
     }    
 
     //Constructor Hilo
-     public HiloMazo(ImageView imgView,Label label){
-        this.label=label;
+     public HiloMazo(ImageView imgView){
         this.imagenSc= imgView;
         llenarMazo();
     }

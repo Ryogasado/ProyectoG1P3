@@ -5,7 +5,10 @@
  */
 package modelo;
 import Enums.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 
 
@@ -22,6 +25,8 @@ public class Juego {
     private Mazo mazo;
     private ArrayList<Carta> cartasJugadas;
     private Alineacion alineacion;
+    private Tablero tableroJugador;
+    
     
     Scanner sc= new Scanner(System.in);
     
@@ -31,8 +36,40 @@ public class Juego {
         ganador= new Jugador(nombre);
         cartasJugadas= new ArrayList<Carta>();
         jugadores= new ArrayList<Jugador>();
-        mazo= new Mazo();       
+        mazo= new Mazo(); 
+        tableroJugador= new Tablero();
     }
+    
+    public static Image Bean(){
+        Image img1 = null;
+        try {
+            int ancho=50;
+            int largo=50;
+            img1 = new Image(new FileInputStream("src/imagenes/frijo1.png"),ancho,largo,true,true);
+                    } 
+        catch (FileNotFoundException ex) {
+            System.out.println("No se encontro la imagen");;
+        }
+        return img1;
+    }
+    
+    public static Image WrongX(){
+        Image img1 = null;
+        try {
+            int ancho=50;
+            int largo=50;
+            img1 = new Image(new FileInputStream("src/imagenes/match.png"),ancho,largo,true,true);
+                    } 
+        catch (FileNotFoundException ex) {
+            System.out.println("No se encontro la imagen");;
+        }
+        return img1;
+    }
+    
+    public Tablero getTablero(){
+        return tableroJugador;
+    }
+    
     
   /*  public static boolean verificarLoteria(Alineacion alineacion, GridPane grid){
         boolean verificacion = false;

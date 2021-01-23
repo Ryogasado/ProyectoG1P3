@@ -52,6 +52,28 @@ public class Tablero {
     public ArrayList<CartaJuego> getCartasJuego(){
         return cartas;
     }
+    
+    public void compararCartas(ArrayList<Carta> cementerio, ImageView imagen){
+        
+        for(CartaJuego c: cartas){
+            Carta cN= c.getCarta();
+            int numeroCarta= cN.getNumero();
+            for(Carta u: cementerio){
+                int numC= u.getNumero();
+                if(numeroCarta==numC){
+                    c.setMarcada(true);
+                    //agregar frejol
+                    //StackPane
+                    Image imagenF= Juego.Bean();
+                    
+                }else{
+                    //salir la X
+                    Image imagenW= Juego.WrongX();
+                    
+                }
+            }  
+        }
+    }
       
     
     

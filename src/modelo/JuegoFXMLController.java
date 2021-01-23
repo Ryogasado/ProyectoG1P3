@@ -27,6 +27,7 @@ import javafx.stage.Stage;
  * 
  */
 public class JuegoFXMLController implements Initializable {
+    Juego juego;
     Tablero tablero1 = new Tablero();
     HiloMazo hilo;
     @FXML
@@ -61,12 +62,6 @@ public class JuegoFXMLController implements Initializable {
         
     }
     
-    
-    
-    
-   
-    
-    
     /**
      * Initializes the controller class.
      * @param url
@@ -76,42 +71,14 @@ public class JuegoFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         // Inicializa el tablero
+        //Crear Juego y del Juego obtener el tabler, el mazo y todo
+        //juego=new Juego();
+        //juego.getTablero().llenarCartasAzar(TableroJugador);
         tablero1.llenarCartasAzar(TableroJugador); 
-        hilo= new HiloMazo(mazoImagen,Proceso);
+        hilo= new HiloMazo(mazoImagen);
         hilo.start();
         
-        aleatorios = tablero1.getCartasAzar();
-        for(int x=0; x<4;x++){
-            for(int y=0;y<4;y++){
-                int id =aleatorios[x][y];
-                
-                StackPane cntBtnImg = new StackPane();
-                Image imagen = Imagen.imagenausar(id);
-                ImageView cntImagen = new ImageView(imagen);
-                
-                cntBtnImg.getChildren().add(cntImagen);
-                
-                
-                gridJugador.setPadding(new Insets(15));
-                gridJugador.add(cntBtnImg, y, x);
-                cntImagen.setOnMouseClicked(e->{
-                    if(id == hMazo.getNumero()){
-                        cntImagen.setDisable(true);
-                        tblJugador.getMatrizMapa().remove(id);
-                        tblJugador.getMatrizMapa().put(id, 1);
-                        ImageView cntBean = new ImageView(Imagen.Bean());
-                        cntBtnImg.getChildren().add(cntBean);
-
-                        
-                        
-                        
-                        
-                    }
-                    else{
-                        HiloWrongChoise wrong = new HiloWrongChoise(cntBtnImg);
-                        wrong.start();
-                    }
-                });
+        
     }    
     
     
