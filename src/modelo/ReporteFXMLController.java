@@ -18,6 +18,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -56,23 +58,27 @@ public class ReporteFXMLController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        rTableView = new TableView();
-        String[] datos = {"Fecha", "Duracion", "Nombre del usuario", "Cantidad de Oponentes", "Alineacion" };
-        for (String campo: datos){
-           TableColumn<String, Jugador> column = new TableColumn<> (campo);
-           column.setCellValueFactory(new PropertyValueFactory<>(campo.toLowerCase()));
-           column.prefWidthProperty().bind(rTableView.widthProperty().divide(5));
-           rTableView.getColumns().add(column);
+        try {
+            rTableView = new TableView();
+            String[] datos = {"Fecha", "Duracion", "Nombre del usuario", "Cantidad de Oponentes", "Alineacion" };
+            for (String campo: datos){
+                TableColumn<String, Jugador> column = new TableColumn<> (campo);
+                column.setCellValueFactory(new PropertyValueFactory<>(campo.toLowerCase()));
+                column.prefWidthProperty().bind(rTableView.widthProperty().divide(5));
+                rTableView.getColumns().add(column);
+            }
+            //Agregar datos al tableView
+            for (Jugador j: jugadores){
+                rTableView.getItems().add(j);
+            }
+            cargarJugadores();
+            // TODO
+        } catch (Exception ex) {
+            Logger.getLogger(ReporteFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
-       //Agregar datos al tableView
-        for (Jugador j: jugadores){
-           rTableView.getItems().add(j); 
-        }
-        cargarJugadores();
-        // TODO
     }
     //METODO PARA CARGAR JUGADORES AL TABLE VIEW
-    private void cargarJugadores(){
+    private void cargarJugadores() throws Exception{
        jugadores = new ArrayList<>();
        Path path =Paths.get(filename);
        if (Files.exists(path)){
@@ -93,7 +99,7 @@ public class ReporteFXMLController implements Initializable {
    }
 
    //METODO PARA ACTUALIZAR LOS JUGADORES AL TABLE VIEW
-    public void actualizarArchivoJugadores() {
+    public void actualizarArchivoJugadores() throws Exception{
         FileOutputStream fout =null;
         try {
             fout =new FileOutputStream(filename);
