@@ -26,14 +26,13 @@ public class Juego {
     private ArrayList<Carta> cartasJugadas;
     private Alineacion alineacion;
     private Tablero tableroJugador;
-    private Alineacion alinea;
     public static int cantOpn=1;
     
     
     Scanner sc= new Scanner(System.in);
     
     public Juego(){
-        alinea= Alineacion.getRandomTipo();
+        
         System.out.println("Nombre del Jugador: ");
         String nombre=sc.nextLine();
         ganador= new Jugador(nombre);
@@ -99,6 +98,7 @@ public class Juego {
         return img1;
     }
     
+    
   /*  public static boolean verificarLoteria(Alineacion alineacion, GridPane grid){
         boolean verificacion = false;
         switch(alineacion){
@@ -116,5 +116,6 @@ public class Juego {
                 return verificacion;
 
     }*/
+
     
 }

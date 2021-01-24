@@ -1,6 +1,8 @@
 
 package modelo;
 
+import Enums.Alineacion;
+import Hilos.HiloComp;
 import Hilos.HiloMazo;
 import java.net.URL;
 import java.util.ArrayList;
@@ -27,6 +29,7 @@ import javafx.stage.Stage;
  * 
  */
 public class JuegoFXMLController implements Initializable {
+    private Alineacion alinea;
     Juego juego;
     Tablero tablero1 = new Tablero();
     Tablero tablero2 = new Tablero();
@@ -84,18 +87,26 @@ public class JuegoFXMLController implements Initializable {
         // Inicializa el tablero
         //Crear Juego y del Juego obtener el tabler, el mazo y todo
         juego=new Juego();
+        alinea= Alineacion.getRandomTipo();
         if(Juego.cantOpn==2){
-          
+           hilo= new HiloMazo(mazoImagen);
+           hilo.start();
            tablero1.llenarCartasAzar(TableroJugador);
            tablero2.llenarCartasAzar(TableroOp1);
            tablero3.llenarCartasAzar(TableroOp2);
-           hilo= new HiloMazo(mazoImagen);
-           hilo.start();
+           HiloComp hOp1= new HiloComp(TableroOp1,hilo,alinea);
+           hOp1.start();
+           HiloComp hOp2= new HiloComp(TableroOp2,hilo,alinea);
+           hOp2.start();
+           
         }
         else{
-          tablero1.llenarCartasAzar(TableroJugador);
           hilo= new HiloMazo(mazoImagen);
           hilo.start();
+          tablero1.llenarCartasAzar(TableroJugador);
+          tablero2.llenarCartasAzar(TableroOp1);
+          HiloComp hOp1= new HiloComp(TableroOp1,hilo,alinea);
+          hOp1.start();
         }
         //juego.getTablero().llenarCartasAzar(TableroJugador);
         
