@@ -7,6 +7,7 @@ package Hilos;
 
 import Enums.Alineacion;
 import java.util.Collections;
+import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -36,6 +37,36 @@ public class HiloComp extends Thread {
         this.cartaMazo = cartaMazo;
         this.alineacion = alineacion;
         llenarGrid();
+    }
+    public void run(){
+        
+        while(entry){
+            dormir();
+            
+            Platform.runLater(()->{
+                for(int i=0;i<4;i++){
+                    for(int j=0;j<4;j++){                    
+                        int n = 0;
+                        if (n==cartaMazo.getNumero()){
+                            ImageView cntImagen = new ImageView();
+
+                            if(visible){
+                                cntImagen.setImage(Juego.Bean());
+                            }
+                            else{
+                                cntImagen.setImage(Juego.WrongX());
+                            }
+                            gridComputadora.add(cntImagen,i,j);
+                        }
+                    }
+                }
+                if(Juego.verificarLoteria(alineacion,tblComputadora)){
+                    System.out.println("GANO LA COMPUTADORA");
+                    detener();
+                }
+            });
+        }
+        
     }
     public void llenarGrid(){
         int n = 0;
