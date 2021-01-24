@@ -73,7 +73,12 @@ public class JuegoFXMLController implements Initializable {
     
     @FXML
     void accionLoteria(ActionEvent event) throws Exception {
-        
+        if(Juego.verificarLoteria(alinea, TableroJugador)==true){
+            System.out.println("Ganaste la Partida");
+        }
+        else{
+            System.out.println("Lo siento, aun no ganas");
+        }
     }
     
     /**
