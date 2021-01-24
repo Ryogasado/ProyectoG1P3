@@ -92,9 +92,9 @@ public class JuegoFXMLController implements Initializable {
            labelAlineacion= new Label("La alineacion es:"+alinea);
            hilo= new HiloMazo(mazoImagen);
            hilo.start();
-           tablero1.llenarCartasAzar(TableroJugador);
-           tablero2.llenarCartasAzar(TableroOp1);
-           tablero3.llenarCartasAzar(TableroOp2);
+           tablero1.llenarCartasAzar(TableroJugador,hilo);
+           tablero2.llenarCartasAzar(TableroOp1,hilo);
+           tablero3.llenarCartasAzar(TableroOp2,hilo);
            HiloComp hOp1= new HiloComp(TableroOp1,hilo,alinea);
            hOp1.start();
            HiloComp hOp2= new HiloComp(TableroOp2,hilo,alinea);
@@ -105,8 +105,8 @@ public class JuegoFXMLController implements Initializable {
           labelAlineacion= new Label("La alineacion es:"+alinea);
           hilo= new HiloMazo(mazoImagen);
           hilo.start();
-          tablero1.llenarCartasAzar(TableroJugador);
-          tablero2.llenarCartasAzar(TableroOp1);
+          tablero1.llenarCartasAzar(TableroJugador, hilo);
+          tablero2.llenarCartasAzar(TableroOp1, hilo);
           HiloComp hOp1= new HiloComp(TableroOp1,hilo,alinea);
           hOp1.start();
         }

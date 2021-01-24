@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="561.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modelo.JuegoFXMLController">
@@ -51,24 +50,6 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
-               <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="1" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-               </children>
             </GridPane>
          </children>
       </AnchorPane>

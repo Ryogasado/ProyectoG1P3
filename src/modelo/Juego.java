@@ -18,7 +18,7 @@ import javafx.scene.layout.GridPane;
  */
 public class Juego {
     private String fecha;
-    private int duracion;
+    private double duracion;
     private Jugador ganador;
     private ArrayList<Jugador> jugadores;
     private Configuracion configuracion;
@@ -99,7 +99,7 @@ public class Juego {
     }
     
     
-  /*  public static boolean verificarLoteria(Alineacion alineacion, GridPane grid){
+    public static boolean verificarLoteria(Alineacion alineacion, GridPane grid){
         boolean verificacion = false;
         switch(alineacion){
             case FILA:
@@ -115,7 +115,7 @@ public class Juego {
 
                 return verificacion;
 
-    }*/
+    }
 
     
 }

@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import Hilos.*;
+import javafx.scene.layout.StackPane;
 
 /**
  *
@@ -14,6 +15,7 @@ import Hilos.*;
 public class Tablero {
     private ArrayList<CartaJuego> cartas;
     private ArrayList<Integer> listaNumCartas = new ArrayList<>();
+    int n =0;
     
     public Tablero(){
         cartas= new ArrayList<CartaJuego>();
@@ -26,17 +28,35 @@ public class Tablero {
         }
     }
     
-    public void llenarCartasAzar(GridPane grid){
+    public void llenarCartasAzar(GridPane grid, HiloMazo hilo){
         try{
-            int n = 0;
+            
             Image img1 = null;
             Collections.shuffle(listaNumCartas);
             
             for(int i=0;i<4;i++){
                 for(int j=0;j<4;j++){
+                    //int n = 0;
+                    StackPane cntBtnImg = new StackPane();
                     img1 = new Image(new FileInputStream("src/imagenes/"+listaNumCartas.get(n)+".png"),60,60,true,true);
                     ImageView img = new ImageView(img1);
-                    grid.add(img,i,j);
+                    cntBtnImg.getChildren().add(img);
+                    grid.add(cntBtnImg,i,j);
+                    //Accion al usar la imagen
+                    img.setOnMouseClicked(e->{
+                        if(n == hilo.getNumero()){
+                        img.setDisable(true);
+                        
+                        ImageView cntBean = new ImageView(Juego.Bean());
+                        cntBtnImg.getChildren().add(cntBean);   
+                        
+                        }
+                        else{
+                        HiloX wrong = new HiloX(cntBtnImg);
+                        wrong.start();
+                        }
+                    });
+                    //Crear CartaJuego
                     int numeroCarta= listaNumCartas.get(n);
                     Carta cartaNueva= new Carta(numeroCarta);
                     CartaJuego cN= new CartaJuego(cartaNueva,false);

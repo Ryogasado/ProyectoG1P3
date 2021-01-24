@@ -33,7 +33,7 @@ public class HiloComp extends Thread {
         this.gridComputadora = gridMain;
         computadora = new Jugador();
         tblComputadora = computadora.getTablero();
-        tblComputadora.llenarCartasAzar(gridMain);
+        tblComputadora.llenarCartasAzar(gridMain, cartaMazo);
         this.cartaMazo = cartaMazo;
         this.alineacion = alineacion;
         llenarGrid();
@@ -60,7 +60,7 @@ public class HiloComp extends Thread {
                         }
                     }
                 }
-                if(Juego.verificarLoteria(alineacion,tblComputadora)){
+                if(Juego.verificarLoteria(alineacion,gridComputadora)){
                     System.out.println("GANO LA COMPUTADORA");
                     detener();
                 }
