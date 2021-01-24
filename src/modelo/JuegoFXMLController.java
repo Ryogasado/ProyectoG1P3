@@ -30,22 +30,31 @@ public class JuegoFXMLController implements Initializable {
     Juego juego;
     Tablero tablero1 = new Tablero();
     HiloMazo hilo;
+    //BOTONES
     @FXML
     private Button regresar;
     
     @FXML
     private Button Loteria;
-    
+    //ETIQUETAS
     @FXML
     private Label Proceso;
-
     
+     @FXML
+    private Label labelAlineacion;
+
+    //GRIDPANES
     @FXML
     private GridPane TableroJugador;
     
+     @FXML
+    private GridPane TableroOp1;
+
+    @FXML
+    private GridPane TableroOp2;
     @FXML
     private ImageView mazoImagen;
-    
+    //IMAGE VIEW
     @FXML
     private ImageView Frejol;
     
