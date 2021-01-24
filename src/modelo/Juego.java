@@ -111,14 +111,30 @@ public class Juego {
                     return true;
                 } else if(cartasJugadas.get(12).isMarcada()==true & cartasJugadas.get(13).isMarcada()==true & cartasJugadas.get(14).isMarcada()==true & cartasJugadas.get(15).isMarcada()==true){
                     
+                }else{
+                    return false;
                 }
         
                 break;
             case COLUMNA:
-                
+                if(cartasJugadas.get(0).isMarcada()==true & cartasJugadas.get(4).isMarcada()==true & cartasJugadas.get(8).isMarcada()==true & cartasJugadas.get(12).isMarcada()==true){
+                    return true;
+                }else if(cartasJugadas.get(1).isMarcada()==true & cartasJugadas.get(5).isMarcada()==true & cartasJugadas.get(9).isMarcada()==true & cartasJugadas.get(13).isMarcada()==true){
+                return true;   
+                } else if(cartasJugadas.get(2).isMarcada()==true & cartasJugadas.get(6).isMarcada()==true & cartasJugadas.get(10).isMarcada()==true & cartasJugadas.get(14).isMarcada()==true){
+                    return true;
+                } else if(cartasJugadas.get(3).isMarcada()==true & cartasJugadas.get(7).isMarcada()==true & cartasJugadas.get(11).isMarcada()==true & cartasJugadas.get(15).isMarcada()==true){
+                    
+                }else{
+                    return false;
+                }
                 break;
             case ESQUINA:
-                
+               if(cartasJugadas.get(0).isMarcada()==true & cartasJugadas.get(3).isMarcada()==true & cartasJugadas.get(12).isMarcada()==true & cartasJugadas.get(15).isMarcada()==true){
+                    return true;
+                } else{
+                   return false;
+               } 
 
         }
 
