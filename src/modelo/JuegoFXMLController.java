@@ -29,6 +29,8 @@ import javafx.stage.Stage;
 public class JuegoFXMLController implements Initializable {
     Juego juego;
     Tablero tablero1 = new Tablero();
+    Tablero tablero2 = new Tablero();
+    Tablero tablero3 = new Tablero();
     HiloMazo hilo;
     //BOTONES
     @FXML
@@ -81,11 +83,22 @@ public class JuegoFXMLController implements Initializable {
         // TODO
         // Inicializa el tablero
         //Crear Juego y del Juego obtener el tabler, el mazo y todo
-        //juego=new Juego();
+        juego=new Juego();
+        if(Juego.cantOpn==2){
+          
+           tablero1.llenarCartasAzar(TableroJugador);
+           tablero2.llenarCartasAzar(TableroOp1);
+           tablero3.llenarCartasAzar(TableroOp2);
+           hilo= new HiloMazo(mazoImagen);
+           hilo.start();
+        }
+        else{
+          tablero1.llenarCartasAzar(TableroJugador);
+          hilo= new HiloMazo(mazoImagen);
+          hilo.start();
+        }
         //juego.getTablero().llenarCartasAzar(TableroJugador);
-        tablero1.llenarCartasAzar(TableroJugador); 
-        hilo= new HiloMazo(mazoImagen);
-        hilo.start();
+        
         
         
     }    
