@@ -35,7 +35,7 @@ public class JuegoFXMLController implements Initializable {
     Tablero tablero2 = new Tablero();
     Tablero tablero3 = new Tablero();
     HiloMazo hilo;
-    ArrayList<Carta> cartasJugadas;
+    ArrayList<CartaJuego> cartasJugadas;
     //BOTONES
     @FXML
     private Button regresar;

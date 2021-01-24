@@ -21,6 +21,10 @@ public class CartaJuego {
     public Carta getCarta(){
         return carta;
     }
+
+    public boolean isMarcada() {
+        return marcada;
+    }
     
     public void setMarcada(boolean marcada){
         this.marcada=marcada;

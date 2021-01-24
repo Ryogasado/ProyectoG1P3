@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import modelo.Carta;
+import modelo.CartaJuego;
 import modelo.Juego;
 import modelo.Jugador;
 import modelo.Tablero;
@@ -29,7 +30,7 @@ public class HiloComp extends Thread {
     private Tablero tblComputadora;
     private Alineacion alineacion;
     private boolean entry = true;
-    private ArrayList<Carta> cartasJugadas;
+    private ArrayList<CartaJuego> cartasJugadas;
     public static boolean visible = true;
     
     public HiloComp(GridPane gridMain, HiloMazo cartaMazo, Alineacion alineacion){

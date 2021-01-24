@@ -72,7 +72,7 @@ public class Tablero {
     public ArrayList<CartaJuego> getCartasJuego(){
         return cartas;
     }
-    
+   /* 
     public void compararCartas(ArrayList<Carta> cementerio, ImageView imagen){
         
         for(CartaJuego c: cartas){
@@ -94,7 +94,7 @@ public class Tablero {
             }  
         }
     }
-      
+     */ 
     
     
     
