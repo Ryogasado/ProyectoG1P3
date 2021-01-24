@@ -12,14 +12,19 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,6 +34,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -46,39 +52,50 @@ public class ReporteFXMLController implements Initializable {
     TableView rTableView;
     @FXML
     private Button regresar;
+    java.util.Date date = new Date();
     
     
             
     //BOTON PARA REGRESAR
-    void accionRegresar() throws Exception{
+    @FXML
+    void accionRegresar(ActionEvent event) throws Exception {
         Parent root1= FXMLLoader.load(getClass().getResource("ProyFXML.fxml"));
         Scene ventanaC= new Scene(root1);
         Stage window= (Stage) regresar.getScene().getWindow();
         window.setScene(ventanaC);
     }
+    /*
+    void accionRegresar()throws Exception{
+        Parent root1= FXMLLoader.load(getClass().getResource("ProyFXML.fxml"));
+        Scene ventanaC= new Scene(root1);
+        Stage window= (Stage) regresar.getScene().getWindow();
+        window.setScene(ventanaC);
+        
+    }
+    */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            rTableView = new TableView();
-            String[] datos = {"Fecha", "Duracion", "Nombre del usuario", "Cantidad de Oponentes", "Alineacion" };
-            for (String campo: datos){
-                TableColumn<String, Jugador> column = new TableColumn<> (campo);
-                column.setCellValueFactory(new PropertyValueFactory<>(campo.toLowerCase()));
-                column.prefWidthProperty().bind(rTableView.widthProperty().divide(5));
-                rTableView.getColumns().add(column);
-            }
-            //Agregar datos al tableView
-            for (Jugador j: jugadores){
-                rTableView.getItems().add(j);
-            }
-            cargarJugadores();
-            // TODO
-        } catch (Exception ex) {
-            Logger.getLogger(ReporteFXMLController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        TableColumn fechaC= new TableColumn("Fecha");
+        TableColumn duraC= new TableColumn("Duracion");
+        TableColumn usuarioC= new TableColumn("Usuario");
+        TableColumn cantOpC= new TableColumn("Cantidad de Oponentes");
+        TableColumn alineacionC= new TableColumn("Alineacion");
+        rTableView.getColumns().addAll(fechaC,duraC, usuarioC, cantOpC, alineacionC);
+        
+        ObservableList<Reporte> data= FXCollections.observableArrayList(
+            //crear nuevo repore
+        );
+        
+        fechaC.setCellValueFactory(new PropertyValueFactory<Reporte,String>("Fecha"));
+        duraC.setCellValueFactory(new PropertyValueFactory<Reporte,String>("Duracion"));
+        usuarioC.setCellValueFactory(new PropertyValueFactory<Reporte,String>("Usuario"));
+        cantOpC.setCellValueFactory(new PropertyValueFactory<Reporte,String>("Cantidad de Oponentes"));
+        alineacionC.setCellValueFactory(new PropertyValueFactory<Reporte,String>("Alineacion"));
+        
+        rTableView.setItems(data);
     }
     //METODO PARA CARGAR JUGADORES AL TABLE VIEW
-    private void cargarJugadores() throws Exception{
+    private void cargarJugadores(){
        jugadores = new ArrayList<>();
        Path path =Paths.get(filename);
        if (Files.exists(path)){
@@ -99,6 +116,7 @@ public class ReporteFXMLController implements Initializable {
    }
 
    //METODO PARA ACTUALIZAR LOS JUGADORES AL TABLE VIEW
+    
     public void actualizarArchivoJugadores() throws Exception{
         FileOutputStream fout =null;
         try {
