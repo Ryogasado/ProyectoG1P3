@@ -89,6 +89,7 @@ public class JuegoFXMLController implements Initializable {
         juego=new Juego();
         alinea= Alineacion.getRandomTipo();
         if(Juego.cantOpn==2){
+           labelAlineacion= new Label("La alineacion es:"+alinea);
            hilo= new HiloMazo(mazoImagen);
            hilo.start();
            tablero1.llenarCartasAzar(TableroJugador);
@@ -101,6 +102,7 @@ public class JuegoFXMLController implements Initializable {
            
         }
         else{
+          labelAlineacion= new Label("La alineacion es:"+alinea);
           hilo= new HiloMazo(mazoImagen);
           hilo.start();
           tablero1.llenarCartasAzar(TableroJugador);
