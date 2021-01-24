@@ -73,6 +73,31 @@ public class Juego {
         return tableroJugador;
     }
     
+    public static Image imagenNoVisible(){
+        Image img1 = null;
+        try {
+            int ancho=45;
+            int largo=45;
+            img1 = new Image(new FileInputStream("src/imagenes/back.png"),ancho,largo,true,true);
+                    } 
+        catch (FileNotFoundException ex) {
+            System.out.println("No se encontro la imagen");;
+        }
+        return img1;
+    }
+    
+    public static Image imagenPequenaAusar(int num){
+        Image img1 = null;
+        try {
+            int ancho=45;
+            int largo=45;
+            img1 = new Image(new FileInputStream("src/imagenes/"+num+".png"),ancho,largo,true,true);
+                    } 
+        catch (FileNotFoundException ex) {
+            System.out.println("No se encontro la imagen");;
+        }
+        return img1;
+    }
     
   /*  public static boolean verificarLoteria(Alineacion alineacion, GridPane grid){
         boolean verificacion = false;

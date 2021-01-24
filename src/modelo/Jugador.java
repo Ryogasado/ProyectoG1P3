@@ -13,7 +13,17 @@ public class Jugador {
     private String nombre;
     private Tablero tablero;
     
+    public Jugador(){
+    }
+    
     public Jugador(String nombre){
         this.nombre=nombre;
+    }
+    public Tablero getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(Tablero tablero) {
+        this.tablero = tablero;
     }
 }
