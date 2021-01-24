@@ -6,12 +6,14 @@
 package Hilos;
 
 import Enums.Alineacion;
+import java.util.ArrayList;
 import java.util.Collections;
 import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import modelo.Carta;
 import modelo.Juego;
 import modelo.Jugador;
 import modelo.Tablero;
@@ -27,6 +29,7 @@ public class HiloComp extends Thread {
     private Tablero tblComputadora;
     private Alineacion alineacion;
     private boolean entry = true;
+    private ArrayList<Carta> cartasJugadas;
     public static boolean visible = true;
     
     public HiloComp(GridPane gridMain, HiloMazo cartaMazo, Alineacion alineacion){
@@ -60,7 +63,7 @@ public class HiloComp extends Thread {
                         }
                     }
                 }
-                if(Juego.verificarLoteria(alineacion,gridComputadora)){
+                if(Juego.verificarLoteria(alineacion,gridComputadora,cartasJugadas)){
                     System.out.println("GANO LA COMPUTADORA");
                     detener();
                 }

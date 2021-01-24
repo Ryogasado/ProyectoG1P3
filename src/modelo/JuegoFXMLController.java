@@ -35,6 +35,7 @@ public class JuegoFXMLController implements Initializable {
     Tablero tablero2 = new Tablero();
     Tablero tablero3 = new Tablero();
     HiloMazo hilo;
+    ArrayList<Carta> cartasJugadas;
     //BOTONES
     @FXML
     private Button regresar;
@@ -73,7 +74,7 @@ public class JuegoFXMLController implements Initializable {
     
     @FXML
     void accionLoteria(ActionEvent event) throws Exception {
-        if(Juego.verificarLoteria(alinea, TableroJugador)==true){
+        if(Juego.verificarLoteria(alinea, TableroJugador,cartasJugadas)==true){
             System.out.println("Ganaste la Partida");
         }
         else{

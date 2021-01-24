@@ -42,7 +42,7 @@ public class Tablero {
                     ImageView img = new ImageView(img1);
                     cntBtnImg.getChildren().add(img);
                     grid.add(cntBtnImg,i,j);
-                    //Accion al usar la imagen
+                    //Accion al clickear la imagen
                     img.setOnMouseClicked(e->{
                         if(n == hilo.getNumero()){
                         img.setDisable(true);

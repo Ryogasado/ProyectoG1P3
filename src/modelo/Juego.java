@@ -23,7 +23,7 @@ public class Juego {
     private ArrayList<Jugador> jugadores;
     private Configuracion configuracion;
     private Mazo mazo;
-    private ArrayList<Carta> cartasJugadas;
+    private ArrayList<CartaJuego> cartasJugadas;
     private Alineacion alineacion;
     private Tablero tableroJugador;
     public static int cantOpn=1;
@@ -36,7 +36,7 @@ public class Juego {
         System.out.println("Nombre del Jugador: ");
         String nombre=sc.nextLine();
         ganador= new Jugador(nombre);
-        cartasJugadas= new ArrayList<Carta>();
+        cartasJugadas= new ArrayList<CartaJuego>();
         jugadores= new ArrayList<Jugador>();
         mazo= new Mazo(); 
         tableroJugador= new Tablero();
@@ -99,11 +99,14 @@ public class Juego {
     }
     
     
-    public static boolean verificarLoteria(Alineacion alineacion, GridPane grid){
+    public static boolean verificarLoteria(Alineacion alineacion, GridPane grid, ArrayList<Carta> cartasJugadas){
         boolean verificacion = false;
         switch(alineacion){
             case FILA:
-                
+                if(cartasJugadas.get(0).setMarcada()==1 & cartasJugadas.get(1).setMarcada()==1 & cartasJugadas.get(2).setMarcada()==1 & cartasJugadas.get(3).setMarcada()==1){
+                    return true;
+                }
+        
                 break;
             case COLUMNA:
                 
